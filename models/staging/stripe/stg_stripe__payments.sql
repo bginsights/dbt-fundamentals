@@ -7,4 +7,4 @@ id AS payment_id
 ,amount / 100 as amount
 ,created as created_at
 FROM
-dbt-tutorial.stripe.payment
+{{ source('stripe', 'payment')}}
