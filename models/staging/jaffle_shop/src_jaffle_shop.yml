@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: Clone of a Postgres Application Database
     database: dbt-tutorial
     schema: jaffle_shop
     freshness: 
@@ -12,13 +13,16 @@ sources:
 
     tables:
       - name: customers
+        description: Raw Customer Data
         freshness: null
         columns:
           - name: id
+            description: Primary Key for customers data
             tests:
               - unique
               - not_null
       - name: orders
+        description: Raw Orders Data
         columns:
           - name: id
             tests:
